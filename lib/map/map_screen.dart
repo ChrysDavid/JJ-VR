@@ -12,7 +12,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  late MapController _mapController;
+  late final MapController _mapController;
   LatLng? _currentLocation;
   List<Marker> _markers = [];
   bool _showCurrentLocation = false;
@@ -39,19 +39,17 @@ class _MapScreenState extends State<MapScreen> {
     );
     setState(() {
       _currentLocation = LatLng(position.latitude, position.longitude);
-      _mapController.move(_currentLocation!, 13.0);
+      _mapController.move(_currentLocation!, _mapController.camera.zoom);
       _showCurrentLocation = true;
       _markers.add(
         Marker(
           width: 40.0,
           height: 40.0,
           point: _currentLocation!,
-          builder: (ctx) => Container(
-            child: Icon(
-              Icons.location_on,
-              color: Colors.blue,
-              size: 40.0,
-            ),
+          child: const Icon(
+            Icons.location_on,
+            color: Colors.blue,
+            size: 40.0,
           ),
         ),
       );
@@ -60,7 +58,7 @@ class _MapScreenState extends State<MapScreen> {
 
   void _navigateToCurrentLocation() {
     if (_currentLocation != null) {
-      _mapController.move(_currentLocation!, 13.0);
+      _mapController.move(_currentLocation!, _mapController.camera.zoom);
     }
   }
 
@@ -82,20 +80,23 @@ class _MapScreenState extends State<MapScreen> {
             onPressed: () {
               // TODO: Implement search functionality
             },
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
         ],
       ),
       body: FlutterMap(
         mapController: _mapController,
         options: MapOptions(
-          center: _currentLocation ?? LatLng(13, 15),
-          zoom: 10,
+          initialCenter: _currentLocation ?? const LatLng(13, 15),
+          initialZoom: 10,
+          interactionOptions: const InteractionOptions(
+            flags: InteractiveFlag.all,
+          ),
         ),
         children: [
           TileLayer(
             urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-            tileProvider: NetworkTileProvider(),
+            userAgentPackageName: 'com.example.app',
           ),
           MarkerLayer(
             markers: _markers,
@@ -105,13 +106,9 @@ class _MapScreenState extends State<MapScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: _showCurrentLocation
             ? _navigateToCurrentLocation
-            : () {
-                setState(() {
-                  getCurrentLocation();
-                });
-              },
-        child: Icon(Icons.my_location),
+            : getCurrentLocation,
         backgroundColor: Colors.green,
+        child: const Icon(Icons.my_location),
       ),
     );
   }
