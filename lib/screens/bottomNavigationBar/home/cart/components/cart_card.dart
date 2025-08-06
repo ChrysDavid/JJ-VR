@@ -68,7 +68,7 @@ class _CartCardState extends State<CartCard> {
                   children: [
                     TextSpan(
                       text: " x${widget.cart.numOfItem}",
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   ],
                 ),

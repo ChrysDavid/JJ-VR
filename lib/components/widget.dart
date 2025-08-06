@@ -52,7 +52,7 @@ class Appbart extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(60),
                   ),
-                  primary: kPrimaryColor,
+                  foregroundColor: kPrimaryColor,
                   backgroundColor: Colors.white,
                   padding: EdgeInsets.zero,
                 ),
@@ -148,7 +148,7 @@ class _MonAvisCommentaireState extends State<MonAvisCommentaire> {
               print('Commentaire: $comment');
             },
             style: ElevatedButton.styleFrom(
-              primary: Colors.blue,
+              foregroundColor: Colors.blue,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),

@@ -143,7 +143,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                             Icons.sentiment_satisfied_alt_outlined,
                             color: Theme.of(context)
                                 .textTheme
-                                .bodyText1!
+                                .bodyLarge!
                                 .color!
                                 .withOpacity(0.64),
                           ),
@@ -158,7 +158,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                             style: TextStyle(
                               fontSize: 16,
                               color:
-                                  Theme.of(context).textTheme.bodyText1!.color,
+                                  Theme.of(context).textTheme.bodyLarge!.color,
                             ),
                             onChanged: (text) {
                               setState(() {
@@ -173,11 +173,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                               hintText: "Type a message",
                               border: InputBorder.none,
                               hintStyle: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodyText1!
-                                    .color!
-                                    .withOpacity(0.64),
+                                color: Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.64),
                               ),
                               contentPadding: EdgeInsets.zero,
                             ),
@@ -188,9 +184,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                           child: IconButton(
                             icon: Icon(
                               Icons.camera_alt_outlined,
-                              color: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1!
+                              color: Theme.of(context).textTheme.bodyLarge!
                                   .color!
                                   .withOpacity(0.64),
                             ),
@@ -200,9 +194,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                         IconButton(
                           icon: Icon(
                             Icons.attach_file,
-                            color: Theme.of(context)
-                                .textTheme
-                                .bodyText1!
+                            color: Theme.of(context).textTheme.bodyLarge!
                                 .color!
                                 .withOpacity(0.64),
                           ),

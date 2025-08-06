@@ -28,8 +28,8 @@ class _PartieImageState extends State<PartieImage> {
                 });
               },
               style: ElevatedButton.styleFrom(
-                primary: kPrimaryColor,
-                onPrimary: Color(0xff000000),
+                foregroundColor: kPrimaryColor,
+                backgroundColor: Color(0xff000000),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -41,8 +41,8 @@ class _PartieImageState extends State<PartieImage> {
                 Navigator.of(context).pop();
               },
               style: ElevatedButton.styleFrom(
-                primary: kPrimaryColor,
-                onPrimary: Color(0xff000000),
+                foregroundColor: kPrimaryColor,
+                backgroundColor: Color(0xff000000),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -139,8 +139,8 @@ class _PartieImageState extends State<PartieImage> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: _isSubscribed ? Colors.grey : kPrimaryColor,
-                    onPrimary: Color(0xff000000),
+                    foregroundColor: _isSubscribed ? Colors.grey : kPrimaryColor,
+                    backgroundColor: Color(0xff000000),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10 * fem),
                     ),
@@ -179,8 +179,8 @@ class _PartieImageState extends State<PartieImage> {
                     // Action à effectuer lors du clic sur le bouton Chat
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: kPrimaryColor,
-                    onPrimary: Color(0xff000000),
+                    foregroundColor: kPrimaryColor,
+                    backgroundColor: Color(0xff000000),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10 * fem),
                     ),
@@ -207,8 +207,8 @@ class _PartieImageState extends State<PartieImage> {
                     // Action à effectuer lors du clic sur le bouton Share profil
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: kPrimaryColor,
-                    onPrimary: Color(0xff000000),
+                    foregroundColor: kPrimaryColor,
+                    backgroundColor: Color(0xff000000),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10 * fem),
                     ),

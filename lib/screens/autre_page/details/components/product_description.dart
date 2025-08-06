@@ -32,7 +32,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Text(
             widget.product.title,
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         Container(
@@ -59,13 +59,14 @@ class _ProductDescriptionState extends State<ProductDescription> {
                   onPressed: () {
                     // Action à effectuer lors du clic sur le bouton Chat
                   },
-                  style: ElevatedButton.styleFrom(
-                    primary: kPrimaryColor,
-                    onPrimary: Color(0xff000000),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10 * fem),
-                    ),
-                  ),
+                  style: TextButton.styleFrom(
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(20),
+  ),
+  foregroundColor: Colors.white, // remplace 'primary'
+  backgroundColor: kPrimaryColor,
+),
+
                   icon: Icon(
                     Icons.chat,
                     size: 24 * ffem,
@@ -87,12 +88,12 @@ class _ProductDescriptionState extends State<ProductDescription> {
                   onPressed: () {
                     // Action à effectuer lors du clic sur le bouton Share profil
                   },
-                  style: ElevatedButton.styleFrom(
-                    primary: kPrimaryColor,
-                    onPrimary: Color(0xff000000),
+                  style: TextButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10 * fem),
+                      borderRadius: BorderRadius.circular(20),
                     ),
+                    foregroundColor: Colors.white, // remplace 'primary'
+                    backgroundColor: kPrimaryColor,
                   ),
                   icon: Icon(
                     Icons.share,
